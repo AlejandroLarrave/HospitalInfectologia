@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.AreaController">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="654.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="33.0" layoutY="8.0" prefHeight="53.0" prefWidth="120.0" text="Áreas" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="76.0" text="Nombre del área" textFill="WHITE" />
+      <TextField fx:id="txtNombre" editable="false" layoutX="142.0" layoutY="72.0" prefHeight="25.0" prefWidth="411.0" />
+      <TableView fx:id="tblArea" layoutX="41.0" layoutY="139.0" onKeyReleased="#seleccionElemento" onMouseClicked="#seleccionElemento" prefHeight="192.0" prefWidth="515.0">
+        <columns>
+          <TableColumn fx:id="colCodArea" editable="false" prefWidth="262.0" text="Código del área" />
+          <TableColumn fx:id="colNombre" prefWidth="252.0" text="Nombre del área" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="76.0" layoutY="347.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnEditar" layoutX="201.0" layoutY="347.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="459.0" layoutY="347.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEliminar" layoutX="327.0" layoutY="347.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="497.0" layoutY="12.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

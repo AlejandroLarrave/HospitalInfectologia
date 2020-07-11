@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.PacienteController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="39.0" layoutY="21.0" prefHeight="32.0" prefWidth="153.0" text="Pacientes" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="96.0" text="Nombres" textFill="WHITE" />
+      <Label layoutX="39.0" layoutY="119.0" text="Fecha Nacimiento" textFill="WHITE" />
+      <Label layoutX="39.0" layoutY="146.0" text="Edad" textFill="WHITE" />
+      <Label layoutX="39.0" layoutY="71.0" text="DPI" textFill="WHITE" />
+      <Label layoutX="318.0" layoutY="96.0" text="Apellidos" textFill="WHITE" />
+      <Label layoutX="318.0" layoutY="119.0" prefHeight="17.0" prefWidth="57.0" text="Dirección" textFill="WHITE" />
+      <Label layoutX="318.0" layoutY="146.0" text="Ocupación" textFill="WHITE" />
+      <Label layoutX="39.0" layoutY="171.0" text="Sexo" textFill="WHITE" />
+      <TextField fx:id="txtDPI" editable="false" layoutX="145.0" layoutY="67.0" prefHeight="25.0" prefWidth="399.0" />
+      <TextField fx:id="txtNombres" editable="false" layoutX="145.0" layoutY="92.0" />
+      <TextField fx:id="txtApellidos" editable="false" layoutX="393.0" layoutY="92.0" />
+      <TextField fx:id="txtEdad" editable="false" layoutX="145.0" layoutY="142.0" />
+      <TextField fx:id="txtOcupacion" editable="false" layoutX="393.0" layoutY="142.0" />
+      <TextField fx:id="txtDireccion" editable="false" layoutX="393.0" layoutY="116.0" />
+      <TextField fx:id="txtSexo" editable="false" layoutX="145.0" layoutY="167.0" />
+      <Button fx:id="btnAgregar" layoutX="90.0" layoutY="348.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnEditar" layoutX="219.0" layoutY="348.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="468.0" layoutY="348.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEliminar" layoutX="349.0" layoutY="348.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="494.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblPacientes" layoutX="17.0" layoutY="201.0" onMouseClicked="#seleccionarElemento" onMouseDragReleased="#seleccionarElemento" prefHeight="122.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="colCodPaciente" prefWidth="77.0" text="CodPaciente" />
+          <TableColumn fx:id="colDPI" prefWidth="36.0" text="DPI" />
+            <TableColumn fx:id="colNombres" prefWidth="58.0" text="Nombres" />
+            <TableColumn fx:id="colApellidos" prefWidth="60.0" text="Apellidos" />
+            <TableColumn fx:id="colNacimiento" prefWidth="74.0" text="Nacimiento" />
+            <TableColumn fx:id="colEdad" prefWidth="46.0" text="Edad" />
+            <TableColumn fx:id="colDireccion" prefWidth="73.0" text="Dirección" />
+            <TableColumn fx:id="colOcupacion" text="Ocupación" />
+            <TableColumn fx:id="colSexo" prefWidth="59.0" text="Sexo" />
+        </columns>
+      </TableView>
+      <GridPane fx:id="grpFechaNacimiento" layoutX="143.0" layoutY="118.0" prefHeight="30.0" prefWidth="149.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="dtpFechaNacimiento" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

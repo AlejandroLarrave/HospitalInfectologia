@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteAreasListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eab1b039-ad6f-4cd8-a855-443bd4714f6a">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarAreas]]>
+	</queryString>
+	<field name="codArea" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreArea" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="257" y="10" width="184" height="56" uuid="10d40095-5976-41b6-8163-171bea4e5550"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Áreas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="42" y="-59" width="519" height="138" uuid="061ed55b-d927-492b-a849-3935678c2a8e"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="2" width="100" height="20" forecolor="#006666" uuid="b809291d-2e3d-4a9b-a2fb-f503ad864ec3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Área]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="2" width="100" height="20" forecolor="#006666" uuid="36c51a98-44c3-46ed-83b6-9e1ad5e40f95"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="65" y="0" width="100" height="20" uuid="8eeccf88-2876-42be-a7f9-55a8b0d6b3dc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codArea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="82" height="20" uuid="aa3284df-c21f-4418-9218-eed718be0184"/>
+				<textFieldExpression><![CDATA[$F{nombreArea}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="36" width="572" height="1" forecolor="#006666" uuid="2fb0c10a-c3ca-4a6d-a77b-0bb5168cfcf0"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

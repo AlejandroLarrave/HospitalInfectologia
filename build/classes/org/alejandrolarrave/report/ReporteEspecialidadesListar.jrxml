@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEspecialidadesListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0cc8b493-a784-41c7-a3b9-d8f7fa2982c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarEspecialidades]]>
+	</queryString>
+	<field name="codEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEspecialidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="12" width="222" height="45" uuid="3900dd16-158b-4066-af29-205e062ed177"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidades]]></text>
+			</staticText>
+			<image>
+				<reportElement x="49" y="-50" width="546" height="129" uuid="3988dd71-857a-4087-b373-8239c22ef3de"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="62" y="0" width="123" height="29" forecolor="#006666" uuid="91038c54-7a18-4ee0-a05c-babe83210c22"/>
+				<textElement>
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="2" width="119" height="20" forecolor="#006666" uuid="b1ab4ab7-023f-4baa-a84e-e9a06f95dd21"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="62" y="0" width="123" height="20" uuid="5bfd2fc8-c1af-4e20-8854-aef9e45ddf99"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="126" height="20" uuid="de69e4ba-04b6-4ea3-a5c2-a6b2b1186c34"/>
+				<textFieldExpression><![CDATA[$F{nombreEspecialidad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="35" width="572" height="1" uuid="0ef5a63e-c2ee-4dbc-bf52-c35ffab6f19f"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

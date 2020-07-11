@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.TelefonoMedicoController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="20.0" prefHeight="47.0" prefWidth="315.0" text="Teléfonos de Médicos" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="87.0" text="Teléfono Personal" textFill="WHITE" />
+      <Label layoutX="38.0" layoutY="123.0" text="Código Médico" textFill="WHITE" />
+      <Label layoutX="310.0" layoutY="87.0" text="Teléfono Trabajo" textFill="WHITE" />
+      <ComboBox fx:id="cmbCodMedico" layoutX="150.0" layoutY="119.0" prefWidth="150.0" />
+      <TextField fx:id="txtTelefonoPersonal" editable="false" layoutX="151.0" layoutY="83.0" />
+      <TextField fx:id="txtTelefonoTrabajo" editable="false" layoutX="414.0" layoutY="83.0" />
+      <TableView fx:id="tblTelefonoMedico" layoutX="54.0" layoutY="164.0" onMouseClicked="#seleccionarElemento" onMouseDragReleased="#seleccionarElemento" prefHeight="165.0" prefWidth="497.0">
+        <columns>
+          <TableColumn fx:id="colCodTelefonoMedico" prefWidth="135.0" text="codTelefonoMedico" />
+            <TableColumn fx:id="colCodMedico" prefWidth="129.0" text="codMedico" />
+            <TableColumn fx:id="colTelefonoPersonal" prefWidth="119.0" text="Teléfono Personal" />
+            <TableColumn fx:id="colTelefonoTrabajo" prefWidth="113.0" text="Teléfono Trabajo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="103.0" layoutY="342.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnReporte" layoutX="459.0" layoutY="342.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="225.0" layoutY="342.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="341.0" layoutY="342.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ImageView fitHeight="59.0" fitWidth="72.0" layoutX="490.0" layoutY="16.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

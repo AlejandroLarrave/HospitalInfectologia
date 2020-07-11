@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="456.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.ProgramadorViewController">
+   <children>
+      <ImageView fitHeight="308.0" fitWidth="456.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="34.0" layoutY="96.0" prefHeight="177.0" prefWidth="193.0">
+         <children>
+            <TextField editable="false" text="Programador:" />
+            <TextField editable="false" text="Larrave Rubio, Alejandro de Jesus" />
+            <TextField editable="false" text="CodTenico: IN5BV" />
+            <TextField editable="false" text="Asignatura: Taller" />
+            <TextField editable="false" text="Prof. Jorge Echeverria" />
+            <TextField editable="false" text="Correo electronico:" />
+            <TextField editable="false" text="larravegrahanbelt@gmail.com" />
+         </children>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </VBox>
+      <ImageView fitHeight="65.0" fitWidth="193.0" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo-en.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="177.0" fitWidth="136.0" layoutX="301.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/20190528_103737-1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="75.0" layoutX="363.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteResponsableTurnoListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfce3111-9af4-4301-bc87-28036fa0b4f7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarResponsableTurno]]>
+	</queryString>
+	<field name="codResponsableTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreResponsable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosResponsable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Areas_codArea" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cargos_codCargo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="208" y="12" width="292" height="57" uuid="1c18d67e-7e88-4b68-b014-7990756322b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Responsable Turno]]></text>
+			</staticText>
+			<image>
+				<reportElement x="31" y="-70" width="541" height="149" uuid="8dc63035-2f5b-43ec-9971-caf7b78091d2"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="108" height="35" forecolor="#006666" uuid="d9357f88-33e8-41b2-9b64-67269561b22e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Responsable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="0" width="100" height="20" forecolor="#006666" uuid="395c7743-7a84-420f-a2c5-fe418edc84c3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Área]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="0" width="100" height="20" forecolor="#006666" uuid="a5647ad8-3a69-4632-b554-caccaebfce46"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="0" width="100" height="20" forecolor="#006666" uuid="996825f8-a5cb-40ba-8782-f2cc97c84997"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="0" width="88" height="20" forecolor="#006666" uuid="6da478d0-0665-4445-a6d1-589f95c68ec4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="108" height="20" uuid="617faf8d-5b20-4f4f-b9f2-a7f587132a97"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codResponsableTurno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="0" width="100" height="20" uuid="861694fd-9e8d-4214-8929-cceef4450c44"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Areas_codArea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="100" height="20" uuid="bd2427de-a50f-4d06-b04c-5c560de7cc00"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Cargos_codCargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="78" height="20" uuid="d8f82b43-fdaa-4fdd-9172-9aec54def1de"/>
+				<textFieldExpression><![CDATA[$F{nombreResponsable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="0" width="74" height="20" uuid="9fbaab08-c54c-4ef8-ac16-c4579fb246fa"/>
+				<textFieldExpression><![CDATA[$F{apellidosResponsable}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="572" height="1" forecolor="#006666" uuid="1fe068e4-101d-4b7e-aafb-0a250cf1e2a8"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

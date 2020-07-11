@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteTurnoBuscar" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3065ef74-9940-4512-b189-feb7a5d9eea0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="p_codTurno" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_BuscarTurno($P{p_codTurno})]]>
+	</queryString>
+	<field name="fechaTurno" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaCita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorCita" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Medico_Especialidad_codMedicoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ResponsableTurno_codResponsableTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pacientes_codPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="499" y="36" width="263" height="62" uuid="dd71d601-57b2-49d1-93ef-156c29db83e7"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Turno]]></text>
+			</staticText>
+			<image>
+				<reportElement x="86" y="-41" width="633" height="159" uuid="5d637a42-dad2-4429-8cb1-74ee96ff4fcf"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="e76deb00-1618-4d45-83bf-d5125e4e3db8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="114" height="15" forecolor="#006666" uuid="dfe3b0a1-b13b-4376-8267-b1ee7058c52d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[codTurno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="114" height="15" forecolor="#006666" uuid="df49d5ed-9773-4885-bf61-147d03e76cdd"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[fechaTurno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="114" height="15" forecolor="#006666" uuid="593f7b54-c408-436a-818e-cf8fd8d290e3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[fechaCita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="0" width="114" height="15" forecolor="#006666" uuid="b1b8a041-8333-4a3c-b557-c7ff942cb035"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[valorCita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="0" width="114" height="15" forecolor="#006666" uuid="ee41eba9-ab64-4174-b9fc-fec36f6dbc65"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Medico_Especialidad_codMedicoEspecialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="570" y="0" width="114" height="15" forecolor="#006666" uuid="2d539b37-2581-4770-99fe-2fc1c7943fb5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ResponsableTurno_codResponsableTurno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="684" y="0" width="114" height="15" forecolor="#006666" uuid="b39b06ff-1daa-4db0-9143-96b3e0e61910"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pacientes_codPaciente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="53f3a0b9-abd2-411e-8214-1ad51a7fc9fb"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="230127ff-6bc3-48c7-8b4e-56434a7da1a9"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{codTurno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="ffaf4452-4459-486e-b7a2-db96d6279f48"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{fechaTurno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="114" height="15" uuid="a17c9bd5-8d59-4849-bed1-f9d1df211ea8"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{fechaCita}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="342" y="0" width="114" height="15" uuid="395e633c-4848-4d6b-bba7-2d7ca705cb1f"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{valorCita}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="456" y="0" width="114" height="15" uuid="5fd73f5a-de18-4c04-81b3-96287f74e033"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{Medico_Especialidad_codMedicoEspecialidad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="570" y="0" width="114" height="15" uuid="1249548e-a485-4828-ac7a-19179887764f"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{ResponsableTurno_codResponsableTurno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="684" y="0" width="114" height="15" uuid="f3192946-e1c1-4e13-8f02-22e66ebbd7db"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{Pacientes_codPaciente}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="62713233-356b-4a43-9fd8-4410a155d3ce"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#006666" backcolor="#009999" uuid="a0ca61ee-1f44-408d-ad9d-5b4e8597f4dd"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="e7b97a6c-f033-4294-9125-3cb0aed69d5d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="f1140f29-0bdb-4b48-8758-423fa8743c9e"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="6b590e2f-91ac-4e58-9acf-cdfb09b4aef8"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.MedicosController">
+   <children>
+      <ImageView fitHeight="401.0" fitWidth="610.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="37.0" layoutY="15.0" prefHeight="47.0" prefWidth="141.0" text="Médicos" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font></Label>
+      <Label layoutX="63.0" layoutY="93.0" prefHeight="37.0" prefWidth="71.0" text="Licencia" textFill="WHITE" />
+      <Label layoutX="63.0" layoutY="62.0" prefHeight="37.0" prefWidth="71.0" text="Nombres" textFill="WHITE" />
+      <Label layoutX="327.0" layoutY="93.0" prefHeight="37.0" prefWidth="71.0" text="Apellidos" textFill="WHITE" />
+      <TextField fx:id="txtLicencia" editable="false" layoutX="135.0" layoutY="99.0" />
+      <TextField fx:id="txtNombres" editable="false" layoutX="136.0" layoutY="68.0" prefHeight="25.0" prefWidth="421.0" />
+      <TextField fx:id="txtApellidos" editable="false" layoutX="408.0" layoutY="99.0" />
+      <Label layoutX="63.0" layoutY="124.0" prefHeight="37.0" prefWidth="71.0" text="Entrada" textFill="WHITE" />
+      <Label layoutX="327.0" layoutY="130.0" prefHeight="25.0" prefWidth="71.0" text="Salida" textFill="WHITE" />
+      <Label layoutX="64.0" layoutY="154.0" prefHeight="37.0" prefWidth="71.0" text="Sexo" textFill="WHITE" />
+      <TextField fx:id="txtSexo" editable="false" layoutX="135.0" layoutY="160.0" />
+      <TableView fx:id="tblMedicos" layoutX="37.0" layoutY="191.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="147.0" prefWidth="527.0">
+        <columns>
+          <TableColumn fx:id="colcodMedico" editable="false" prefWidth="68.0" sortable="false" text="codMedico" />
+          <TableColumn fx:id="colLicencia" editable="false" prefWidth="82.0" sortable="false" text="licenciaMedica" />
+            <TableColumn fx:id="colNombres" editable="false" prefWidth="56.0" sortable="false" text="nombres" />
+            <TableColumn fx:id="colApellidos" editable="false" prefWidth="62.0" sortable="false" text="apellidos" />
+            <TableColumn fx:id="colEntrada" editable="false" prefWidth="72.0" sortable="false" text="horaEntrada" />
+            <TableColumn fx:id="colSalida" editable="false" prefWidth="75.0" sortable="false" text="horaSalida" />
+            <TableColumn fx:id="colSexo" editable="false" prefWidth="47.0" sortable="false" text="sexo" />
+            <TableColumn fx:id="colTurno" editable="false" prefWidth="64.0" sortable="false" text="turno" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="28.0" layoutY="349.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="25.0" prefWidth="71.0" text="Agregar" />
+      <Button fx:id="btnEditar" layoutX="134.0" layoutY="349.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="71.0" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="249.0" layoutY="349.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="71.0" text="Eliminar" />
+      <Button fx:id="btnReporte" layoutX="356.0" layoutY="349.0" mnemonicParsing="false" onAction="#imprimirReporte" prefHeight="25.0" prefWidth="71.0" text="Reporte" />
+      <ImageView fitHeight="47.0" fitWidth="64.0" layoutX="494.0" layoutY="15.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="327.0" layoutY="164.0" text="Turno Máximo" textFill="WHITE" />
+      <TextField fx:id="txtTurno" editable="false" layoutX="408.0" layoutY="160.0" />
+      <TextField fx:id="txtEntrada" editable="false" layoutX="135.0" layoutY="130.0" />
+      <TextField fx:id="txtSalida" editable="false" layoutX="408.0" layoutY="130.0" />
+      <Button fx:id="btnReporteGeneral" layoutX="457.0" layoutY="349.0" mnemonicParsing="false" onAction="#imprimirReporteGeneral" text="Reporte General" />
+   </children>
+</AnchorPane>

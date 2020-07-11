@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.ResponsableTurnoController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="609.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="10.0" text="Responsable Turno" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="74.0" text="Nombres" textFill="WHITE" />
+      <TextField fx:id="txtNombres" editable="false" layoutX="92.0" layoutY="70.0" prefHeight="25.0" prefWidth="465.0" />
+      <TextField fx:id="txtApellidos" editable="false" layoutX="92.0" layoutY="95.0" />
+      <TextField fx:id="txtTelefono" editable="false" layoutX="408.0" layoutY="95.0" />
+      <Label layoutX="14.0" layoutY="99.0" text="Apellidos" textFill="WHITE" />
+      <Label layoutX="325.0" layoutY="99.0" text="Teléfono" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="124.0" text="Código Área" textFill="WHITE" />
+      <ImageView fitHeight="46.0" fitWidth="67.0" layoutX="516.0" layoutY="16.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbCodArea" layoutX="92.0" layoutY="120.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbCodCargo" layoutX="408.0" layoutY="120.0" prefWidth="150.0" />
+      <Label layoutX="325.0" layoutY="124.0" text="Código Cargo" textFill="WHITE" />
+      <TableView fx:id="tblResponsableTurno" layoutX="14.0" layoutY="155.0" onKeyReleased="#SeleccionarElemento" onMouseClicked="#SeleccionarElemento" prefHeight="186.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="colCodResponsable" prefWidth="93.0" text="codResponsable" />
+          <TableColumn fx:id="colNombres" prefWidth="92.0" text="Nombres" />
+            <TableColumn fx:id="colApellidos" prefWidth="93.0" text="Apellidos" />
+            <TableColumn fx:id="colTelefono" prefWidth="99.0" text="Teléfono" />
+            <TableColumn fx:id="colCodArea" prefWidth="98.0" text="CódigoArea" />
+            <TableColumn fx:id="colCodCargo" prefWidth="91.0" text="CódigoCargo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="55.0" layoutY="353.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnReporte" layoutX="490.0" layoutY="353.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="215.0" layoutY="353.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="346.0" layoutY="353.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+   </children>
+</AnchorPane>

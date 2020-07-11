@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTurnosListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01c742d0-74c6-428a-9470-28109b3e9708">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarTurno]]>
+	</queryString>
+	<field name="codTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorCita" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Medico_Especialidad_codMedicoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ResponsableTurno_codResponsableTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pacientes_codPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="276" y="0" width="189" height="68" uuid="d68725b6-3822-41b0-a0af-abb912068293"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turnos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="-59" width="536" height="138" uuid="39b59c7b-1ed8-4183-ac31-101343bc5237"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="91" height="27" forecolor="#006666" uuid="46e63cab-d05b-4be2-bc75-969634c59f90"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Turno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="0" width="100" height="20" forecolor="#006666" uuid="8bb363ec-3905-49b0-b142-59ba129cf973"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Cita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="2" width="103" height="43" forecolor="#006666" uuid="e2f47f57-e719-451c-8020-dc11103ac04a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Médico Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="2" width="100" height="43" forecolor="#006666" uuid="4cc4b858-b1d7-4704-8845-4415ed41b8e3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Responsable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="2" width="86" height="43" forecolor="#006666" uuid="cf4fbc79-47c0-4519-a4fb-0bcce9629cc9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Paciente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="20" uuid="d320ecbf-f894-4c9d-a0e8-561fcb0b109f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codTurno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="0" width="100" height="20" uuid="49cb6037-3f81-4297-b91a-511287da797a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{valorCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="0" width="100" height="20" uuid="0597c216-2d6d-45da-911a-51cbaabe53a0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Medico_Especialidad_codMedicoEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="100" height="20" uuid="2ab7be95-a14c-49e6-80bf-ca305ffc7a5a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ResponsableTurno_codResponsableTurno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="0" width="86" height="20" uuid="e4d9a2b8-026c-40bc-a5d9-6f4c4e051532"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pacientes_codPaciente}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="32" width="572" height="2" forecolor="#006666" uuid="7bb96826-7b6a-4c79-841e-72e2c64b5c69"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

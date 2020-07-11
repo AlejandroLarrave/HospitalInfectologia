@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.ContactoUrgenciaController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="25.0" layoutY="14.0" prefHeight="49.0" prefWidth="280.0" text="Contacto Urgencia" textFill="WHITE">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="74.0" text="Nombres" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="129.0" text="Número de Contacto" textFill="WHITE" />
+      <Label layoutX="312.0" layoutY="129.0" text="Código Paciente" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="102.0" text="Apellidos" textFill="WHITE" />
+      <ComboBox fx:id="cmbCodPaciente" layoutX="408.0" layoutY="125.0" prefWidth="150.0" />
+      <TextField fx:id="txtNombres" layoutX="169.0" layoutY="70.0" prefHeight="25.0" prefWidth="389.0" />
+      <TextField fx:id="txtApellidos" layoutX="169.0" layoutY="98.0" prefHeight="25.0" prefWidth="389.0" />
+      <TextField fx:id="txtNumeroContacto" layoutX="169.0" layoutY="125.0" prefHeight="25.0" prefWidth="128.0" />
+      <TableView fx:id="tblContactoUrgencia" layoutX="45.0" layoutY="159.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="179.0" prefWidth="510.0">
+        <columns>
+          <TableColumn fx:id="colCodContactoUrgencia" prefWidth="158.0" text="Código Contacto Urgencia" />
+          <TableColumn fx:id="colCodPaciente" prefWidth="100.0" text="Código Paciente" />
+            <TableColumn fx:id="colNombres" prefWidth="60.0" text="Nombres" />
+            <TableColumn fx:id="colApellidos" prefWidth="65.0" text="Apellidos" />
+            <TableColumn fx:id="colNumeroContacto" prefWidth="125.0" text="Número de Contacto" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="81.0" layoutY="351.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnReporte" layoutX="453.0" layoutY="351.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="199.0" layoutY="351.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="326.0" layoutY="351.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ImageView fitHeight="50.0" fitWidth="59.0" layoutX="521.0" layoutY="9.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

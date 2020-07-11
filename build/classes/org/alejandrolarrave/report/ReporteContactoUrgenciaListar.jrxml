@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteContactoUrgenciaListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="881b0140-e577-4670-8468-13e0748b8f1f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarContactoUrgencia]]>
+	</queryString>
+	<field name="codContactoUrgencia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pacientes_codPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="15" width="288" height="37" uuid="77c9e05e-6366-44bb-b76b-4301b2a065bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contacto Urgencia]]></text>
+			</staticText>
+			<image>
+				<reportElement x="39" y="-51" width="507" height="130" uuid="ff97d4ff-bcea-4f52-ac7f-3c57aa62d05a"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="43" forecolor="#006666" uuid="ed9588a7-0c1d-4ee0-8bbe-6114ec63fffb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Contacto Urgencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="0" width="100" height="20" forecolor="#006666" uuid="12bbe02d-291d-4c19-965f-0f91ebbcb1d6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="0" width="100" height="20" forecolor="#006666" uuid="2e0f23a4-a4c2-4c1e-ab9a-ef1f793d6054"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="0" width="100" height="20" forecolor="#006666" uuid="e355d9fa-5423-44e2-b671-a8d4eb54cf42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="2" width="90" height="41" forecolor="#006666" uuid="e1585293-a175-4262-95ee-e41a574e03ef"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Contacto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="88aca2d9-007c-4db2-b91d-be00e0a37194"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codContactoUrgencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="0" width="100" height="20" uuid="eccfe268-dd26-443e-bb4a-3d23116f2bf8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pacientes_codPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="82" height="20" uuid="570c0ad9-2cb0-49be-8294-8fef3d5a73cf"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="80" height="20" uuid="9a912a82-a1fd-497a-aafe-659c5688adb0"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="0" width="90" height="20" uuid="569fb171-caab-4375-95d5-8feab29a16b6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{numeroContacto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="572" height="1" forecolor="#006666" uuid="607c9520-d7c6-42a8-acf0-dbe1de5bf173"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

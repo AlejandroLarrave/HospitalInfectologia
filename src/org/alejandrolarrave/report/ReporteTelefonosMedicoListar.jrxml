@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTelefonosMedicoListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96de50d9-b832-4816-a73b-d6b4a1a84126">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarTelefonosMedicos]]>
+	</queryString>
+	<field name="codTelefonoMedico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoTrabajo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Medicos_codMedico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="11" width="275" height="49" uuid="ecc462b8-afcd-460b-9c95-7b9b0d0622ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfonos Médico]]></text>
+			</staticText>
+			<image>
+				<reportElement x="51" y="-82" width="500" height="161" uuid="d8a646d6-5e9a-4cf6-b83f-440cef3c05a6"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="118" height="34" forecolor="#006666" uuid="24c81cda-dc7c-4090-98c7-b21d8d1a02b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Teléfono Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="100" height="20" forecolor="#006666" uuid="fb65640e-6b78-4b9d-9c76-24b5aed92fca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="100" height="34" forecolor="#006666" uuid="f5f9c57b-980f-44ad-8b59-d6bce400db30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Télefono Personal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="0" width="100" height="34" forecolor="#006666" uuid="781ad1fe-cb78-4ef0-a18d-93c6a040c7bd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono Trabajo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="12a1d0c4-a89f-42c3-b699-50c024363c99"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codTelefonoMedico}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="39" width="572" height="1" forecolor="#006666" uuid="30f5e4f2-36ec-4642-b901-32648ef1b813"/>
+			</line>
+			<textField>
+				<reportElement x="146" y="0" width="100" height="20" uuid="899d224f-6a97-45c5-9f92-66ebe747a341"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Medicos_codMedico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="100" height="20" uuid="d56a22d0-2026-4ae9-9d45-f0244bcce632"/>
+				<textFieldExpression><![CDATA[$F{telefonoPersonal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="0" width="100" height="20" uuid="9b07ff4b-bab9-4212-b559-e890b996de2e"/>
+				<textFieldExpression><![CDATA[$F{telefonoTrabajo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

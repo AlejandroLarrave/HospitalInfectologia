@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCargosListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="859bc261-cc3b-4606-b982-2a7bf7dee418">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarCargos]]>
+	</queryString>
+	<field name="codCargo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreCargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="271" y="12" width="157" height="57" uuid="d4aa3324-53e6-42d6-8233-75ac5c65954a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="52" y="-51" width="344" height="130" uuid="d1c17fbd-a403-407e-bcd6-6f910cd78271"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="114" y="2" width="100" height="20" forecolor="#006666" uuid="a8438f32-b018-41f4-9a95-82b0b45c8f8e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="2" width="100" height="20" forecolor="#006666" uuid="22c334d3-f82f-4d69-acb0-aeeaf2500dd7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="114" y="0" width="100" height="20" uuid="f6e0fc4f-97eb-4be4-9ad4-c0703328f34d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codCargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="97" height="20" uuid="be35e713-76da-43bc-9a40-b3e15e1eb178"/>
+				<textFieldExpression><![CDATA[$F{nombreCargo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="34" width="572" height="1" forecolor="#006666" uuid="4afec205-28e5-4665-a677-1921f08a7dc8"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

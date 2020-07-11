@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.MedicoEspecialidadController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="14.0" text="Médico Especialidad" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="77.0" text="Código Médico" textFill="WHITE" />
+      <Label layoutX="300.0" layoutY="77.0" text="Código Especialidad" textFill="WHITE" />
+      <Label layoutX="35.0" layoutY="110.0" text="Código Horario" textFill="WHITE" />
+      <ComboBox fx:id="cmbCodMedico" layoutX="132.0" layoutY="73.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbCodEspecialidad" layoutX="420.0" layoutY="73.0" prefWidth="150.0" />
+      <ComboBox fx:id="cmbCodHorario" layoutX="132.0" layoutY="106.0" prefWidth="150.0" />
+      <TableView fx:id="tblMedicoEspecialidad" layoutX="33.0" layoutY="143.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="539.0">
+        <columns>
+          <TableColumn fx:id="colCodMedicoEspecialidad" prefWidth="143.0" text="CodMedicoEspecialidad" />
+            <TableColumn fx:id="colCodMedico" prefWidth="127.0" text="Cod Médico" />
+          <TableColumn fx:id="colCodEspecialidad" prefWidth="129.0" text="Cod Especialidad" />
+            <TableColumn fx:id="colCodHorario" prefWidth="139.0" text="Cod Horario" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="50.0" layoutY="355.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnReporte" layoutX="504.0" layoutY="355.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="194.0" layoutY="355.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="354.0" layoutY="355.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ImageView fitHeight="46.0" fitWidth="59.0" layoutX="513.0" layoutY="19.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

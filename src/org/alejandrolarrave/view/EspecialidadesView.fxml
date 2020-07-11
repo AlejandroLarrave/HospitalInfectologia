@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandrolarrave.controller.EspecialidadesController">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fondos%20hospital.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="14.0" text="Especialidades" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="79.0" text="Nombre Especialidad" textFill="WHITE" />
+      <TextField fx:id="txtNombre" editable="false" layoutX="175.0" layoutY="75.0" prefHeight="25.0" prefWidth="370.0" />
+      <ImageView fitHeight="46.0" fitWidth="84.0" layoutX="524.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/regresarMenu.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblEspecialidades" layoutX="46.0" layoutY="123.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="502.0">
+        <columns>
+          <TableColumn fx:id="colCodEspecialidad" prefWidth="255.0" text="Código Especialidad" />
+          <TableColumn fx:id="colNombre" editable="false" minWidth="0.0" prefWidth="246.0" text="Nombre de la Especialidad" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="62.0" layoutY="343.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnReporte" layoutX="484.0" layoutY="343.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="212.0" layoutY="343.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="360.0" layoutY="343.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteMedicoEspecialidadListar" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b881f9f-8828-4b21-8110-8d44c3fc0b87">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarMedico_Especialidad]]>
+	</queryString>
+	<field name="codMedicoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Medicos_codMedico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Especialidades_codEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Horarios_codHorario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="22" width="333" height="44" uuid="3fa6f042-c60b-42d7-8b7f-ee7ba1fd4619"/>
+				<textElement>
+					<font fontName="Californian FB" size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médico Especialidad]]></text>
+			</staticText>
+			<image>
+				<reportElement x="28" y="-64" width="507" height="146" uuid="5ca90d1b-285a-471d-825d-7872d38a2be9"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Desktop\\AlejoLarrave\\HospitalInfectologia_2018407\\src\\org\\alejandrolarrave\\report\\Hospital.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="141" height="45" forecolor="#006666" uuid="2bf3c701-a213-482d-a1c6-7d2b196aebb0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Médico Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="0" width="100" height="20" forecolor="#006666" uuid="f517bd70-2c48-475a-a9a0-07546954cdce"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="2" width="100" height="43" forecolor="#006666" uuid="10049443-3358-4dc1-b85f-8aea16c2bc0a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="2" width="100" height="43" forecolor="#006666" uuid="715e5ca6-c7a4-458e-a754-cab3a14603c8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Californian FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código Horario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="864039c3-978f-4028-95ec-ba91f6109a8c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codMedicoEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="0" width="100" height="20" uuid="6caa66b8-6291-4a6f-a259-b805f01f290d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Medicos_codMedico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="100" height="20" uuid="3a99f554-a270-41cc-8354-0e562a272fe3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Especialidades_codEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="457" y="0" width="100" height="20" uuid="2a8fdae8-f4eb-4b48-956f-e2b6e2140b12"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Horarios_codHorario}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="572" height="1" forecolor="#006666" uuid="bc067f94-a82b-4cbb-8d62-b883984125b7"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
